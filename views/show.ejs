@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Show</title>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-bordered table-border text-center shadow">
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>User Password</th>
+                <th>User Delete</th>
+                <th>User Edit</th>
+            </tr>
+
+            <% userlist.forEach(function(userlist){ %>
+                <tr>
+                    <td>
+                        <%= userlist.id %>
+                    </td>
+                    <td>
+                        <%= userlist.name %>
+                    </td>
+                    <td>
+                        <%= userlist.email %>
+                    </td>
+                    <td>
+                        <%= userlist.password %>
+                    </td>
+                    <td>
+                        <a href="/delete/<%= userlist.id %>" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                    <td>
+                        <a href="/edit/<%= userlist.id %>" class="btn btn-success btn-sm">Edit</a>
+                    </td>
+                </tr>
+                <% }) %>
+
+        </table>
+    </div>
+</body>
+
+</html>

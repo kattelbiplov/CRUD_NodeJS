@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Update</title>
+</head>
+
+<body>
+    <div class="container">
+        <% userlist.forEach(function(userlist){ %>
+            <form method="post" action="/update/<%= userlist.id %>" autocomplete="off">
+                <div class="form-group">
+                    <label><b>Username:</b></label>
+                    <input type="text" name="name" class="form-control" value="<%= userlist.name %>">
+                </div>
+                <div class="form-group">
+                    <label><b>Add your Email:</b></label>
+                    <input type="email" name="email" class="form-control" value="<%= userlist.email %>">
+                </div>
+                <div class="form-group">
+                    <label><b>Password:</b></label>
+                    <input type="password" name="password" class="form-control" value="<%= userlist.password %>">
+                </div>
+                <input type="submit" name="update" value="update" class="btn btn-success">
+            </form>
+            <%}) %>
+    </div>
+</body>
+
+</html>
